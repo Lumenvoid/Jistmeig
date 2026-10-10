@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <h2>NEXORA</h2>
+          <small>SCRIPT WORKSPACE</small>
+        </div>
+      </div>
+
+      <p class="section-label">WORKSPACE</p>
+
+      <button class="nav active" data-panel="editor">⌘ &nbsp; Editor</button>
+      <button class="nav" data-panel="scripts">▤ &nbsp; Saved Scripts</button>
+      <button class="nav" data-panel="console">›_ &nbsp; Console</button>
+
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Standalone mode</strong>
+          <small>No Roblox connection</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>Workspace <span>/</span> <b id="breadcrumb">Editor</b></div>
+        <div class="top-right">
+          <span class="badge">● Standalone</span>
+          <button id="saveTop" class="icon-button" title="Save script">▣</button>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">SCRIPT WORKSPACE</p>
+          <h1>Build something <span>great.</span></h1>
+          <p class="subtitle">Your space to write, edit and organize scripts.</p>
+        </div>
+        <div class="watermark">N<span>✦</span></div>
+      </section>
+
+      <section id="editorPanel" class="panel">
+        <div class="panel-header">
+          <div>◇ &nbsp; <b>Editor</b> <span class="muted">/</span> <span id="fileName">untitled.lua</span></div>
+          <button class="small-button" id="newTab">＋ New tab</button>
+        </div>
+
+        <div id="tabs" class="tabs">
+          <button class="tab selected">◈ untitled.lua</button>
+        </div>
+
+        <div class="editor-area">
+          <div id="lineNumbers" class="line-numbers">1</div>
+          <textarea id="editor" spellcheck="false"
+            autocapitalize="off" autocomplete="off"
+            aria-label="Script editor">-- Welcome to Nexora
+-- This is a standalone demo.
+-- Supported demo commands:
+-- print("Hello, Nexora!")
+-- help()
+
+print("Hello, Nexora!")</textarea>
+        </div>
+
+        <div class="editor-status">
+          <span><i class="status-dot purple"></i> Lua-style editor</span>
+          <span id="cursorPos">Ln 1, Col 1 · UTF-8</span>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar-buttons">
+            <button id="execute" class="primary-button">▶ &nbsp; Run demo</button>
+            <button id="clear" class="secondary-button">⌫ &nbsp; Clear</button>
+            <button id="save" class="secondary-button">▣ &nbsp; Save script</button>
+          </div>
+          <span class="muted">Safe demo mode</span>
+        </div>
+      </section>
+
+      <section id="scriptsPanel" class="panel hidden">
+        <div class="panel-header">
+          <b>▤ &nbsp; Saved scripts</b>
+          <button id="createScript" class="small-button">＋ New script</button>
+        </div>
+        <div id="savedList" class="saved-list">
+          <p class="empty">No scripts saved yet.</p>
+        </div>
+      </section>
+
+      <section id="consolePanel" class="panel">
+        <div class="panel-header">
+          <b>›_ &nbsp; Output console</b>
+          <button id="clearConsole" class="small-button">Clear output</button>
+        </div>
+        <div id="consoleOutput" class="console-output">
+          <p class="console-muted">Nexora is ready. No Roblox process is connected.</p>
+          <p><span class="prompt">›</span> Try <code>print("Hello, Nexora!")</code> in the editor.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span><i class="status-dot"></i> Ready</span>
+        <span>Standalone workspace · Safe demo mode</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
